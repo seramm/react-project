@@ -10,7 +10,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
 }
 
 h1 {
@@ -52,6 +53,47 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.h-flexbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.v-flexbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.task {
+  display: flex;
+  width: 65vw;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #111;
+  border-radius: 5px;
+  padding: 25px;
+  margin: 10px;
+}
+
+.separator {
+  width: 75vw;
+  border: 0;
+  height: 2px;
+  background: #bbb;
+  margin: 20px 0;
 }
 
 @media (prefers-color-scheme: light) {

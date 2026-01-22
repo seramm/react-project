@@ -1,10 +1,10 @@
-export default function Input({ value, placeholder, size }) {
+export default function Input({ value, placeholder, onChange }) {
   return (
     <div style={{ margin: "1rem", display: "flex", width: "100%" }}>
       <input
         placeholder={placeholder}
-        size={size}
         value={value}
+        onChange={onChange}
         style={{
           display: "flex",
           width: "100%",
