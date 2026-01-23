@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TaskList from "./components/tasklist";
 import Input from "./components/input";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("my_tasks");
+    if (savedTasks) {
+      return JSON.parse(savedTasks);
+    }
+    return [];
+  });
   const [text, setText] = useState();
+
+  useEffect(() => {
+    if (tasks) {
+      localStorage.setItem("my_tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
 
   const addTask = () => {
     const newTask = { id: Date.now(), text: text };
